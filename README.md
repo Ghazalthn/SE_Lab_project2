@@ -117,5 +117,62 @@
 </td>
 </tr>
 
+<tr>
+<td width="64">
+<p><strong>۷</strong></p>
+</td>
+<td width="198">
+<p>MessageService</p>
+</td>
+<td width="141">
+<p>
+افزودن تابع
+</p>
+</td>
+<td width="292">
+<p>
+اضافه کردن تابع sendTelegramMessage به این کلاس
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="64">
+<p><strong>۷</strong></p>
+</td>
+<td width="198">
+<p>EmailMessageService</p>
+</td>
+<td width="141">
+<p>
+افزودن تابع
+</p>
+</td>
+<td width="292">
+<p>
+اضافه کردن تابع sendTelegramMessage به این کلاس
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="64">
+<p><strong>۷</strong></p>
+</td>
+<td width="198">
+<p>SmsMessageService</p>
+</td>
+<td width="141">
+<p>
+افزودن تابع
+</p>
+</td>
+<td width="292">
+<p>
+اضافه کردن تابع sendTelegramMessage به این کلاس
+</p>
+</td>
+</tr>
+
 </tbody>
 </table>
