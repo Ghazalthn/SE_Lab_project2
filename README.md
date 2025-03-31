@@ -269,5 +269,62 @@
 </td>
 </tr>
 
+<tr>
+<td width="64">
+<p><strong>14</strong></p>
+</td>
+<td width="198">
+<p>Main</p>
+</td>
+<td width="141">
+<p>
+تغییر تابع
+</p>
+</td>
+<td width="292">
+<p>
+افزودن خطی جهت نشان دادن گزینه‌ی ارسال پیام با تلگرام (عدد ۳)
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="64">
+<p><strong>15</strong></p>
+</td>
+<td width="198">
+<p>Main</p>
+</td>
+<td width="141">
+<p>
+تغییر تابع
+</p>
+</td>
+<td width="292">
+<p>
+افزودن case 3 به switch مربوط به نوع پیام ارسالی
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="64">
+<p><strong>16</strong></p>
+</td>
+<td width="198">
+<p>Main</p>
+</td>
+<td width="141">
+<p>
+تغییر تابع
+</p>
+</td>
+<td width="292">
+<p>
+افزودن حالتی که پیام ارسالی از جنس پیام تلگرامی باشد به if elseهای انتهای کلاس
+</p>
+</td>
+</tr>
+
 </tbody>
 </table>
