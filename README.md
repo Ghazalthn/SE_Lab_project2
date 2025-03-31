@@ -174,5 +174,100 @@
 </td>
 </tr>
 
+<tr>
+<td width="64">
+<p><strong>۷</strong></p>
+</td>
+<td width="198">
+<p>TelegramMessageService</p>
+</td>
+<td width="141">
+<p>
+افزودن کلاس
+</p>
+</td>
+<td width="292">
+<p>
+افزودن این کلاس به پروژه
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="64">
+<p><strong>۷</strong></p>
+</td>
+<td width="198">
+<p>TelegramMessageService</p>
+</td>
+<td width="141">
+<p>
+افزودن تابع
+</p>
+</td>
+<td width="292">
+<p>
+اضافه کردن تابع sendTelegramMessage به این کلاس
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="64">
+<p><strong>۷</strong></p>
+</td>
+<td width="198">
+<p>TelegramMessageService</p>
+</td>
+<td width="141">
+<p>
+افزودن تابع
+</p>
+</td>
+<td width="292">
+<p>
+اضافه کردن تابع sendEmailMessage به این کلاس
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="64">
+<p><strong>۷</strong></p>
+</td>
+<td width="198">
+<p>TelegramMessageService</p>
+</td>
+<td width="141">
+<p>
+افزودن تابع
+</p>
+</td>
+<td width="292">
+<p>
+اضافه کردن تابع sendSmsMessage به این کلاس
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="64">
+<p><strong>۷</strong></p>
+</td>
+<td width="198">
+<p>TelegramMessageService</p>
+</td>
+<td width="141">
+<p>
+افزودن تابع
+</p>
+</td>
+<td width="292">
+<p>
+اضافه کردن تابع validatePhoneNumber به این کلاس
+</p>
+</td>
+</tr>
+
 </tbody>
 </table>
