@@ -328,3 +328,60 @@
 
 </tbody>
 </table>
+
+
+## مرحله سوم: بررسی تطابق با اصول SOLID
+
+<table dir='rtl'>
+  <tbody>
+    <tr>
+      <td rowspan="2" width="240"><p>اصل 1</p><p>Single Responsibility</p></td>
+      <td width="95"><p><strong>موارد تحقق</strong></p></td>
+      <td width="454"><p>- هر کلاس به ارسال یک نوع از پیام‌ها می‌پردازد. من جمله این انواع می‌توان به ایمیل، پیامک و پیام تلگرامی اشاره کرد.
+    <tr>
+      <td><p><strong>موارد نقض</strong></p></td>
+      <td><p>کلاس main همه کار می‌کند و وظایف زیادی دارد.
+به‌علاوه، هر کلاس، بخش ولیدیشن را نیز هندل می‌کند. به همین دلیل بیش از یک دلیل برای تغییر آن وجود دارد. (که برخلاف اصول SRP می‌باشد.)
+      </p></td>
+    </tr>
+    <tr>
+      <td rowspan="2"><p>اصل 2</p><p>Open-Close Principle (OCP)</p></td>
+      <td><p><strong>موارد تحقق</strong></p></td>
+      <td>
+<p>به طور کلی این اصل در اغلب کلاس‌ها رعایت نشده است. تنها تایع main اندکی قایل بهبود است.</p>
+    </tr>
+    <tr>
+      <td><p><strong>موارد نقض</strong></p></td>
+      <td><p> افزودن نوعی جدید از پیام بدون مودیفای کردن main ممکن نیست. همچنین سرویس message نیز در این راستا، نیازمند افزوده شدن متودی جدید است.</p></td>
+    </tr>
+    <tr>
+      <td rowspan="2"><p>اصل 3</p><p>Liskov Substitution Principle</p></td>
+      <td><p><strong>موارد تحقق</strong></p></td>
+      <td>
+<p>همه‌ی سرویس‌ها به درستی  و مطابق LSP به پیاده‌سازی MessageService پرداخته‌اند.</p>
+    </tr>
+    <tr>
+      <td><p><strong>موارد نقض</strong></p></td>
+      <td><p> MessageService، رفتارهای اضافی به فرزندان خود تحمیل کرده در حالیکه آن‌ها به این رفتار‌ها نیازی ندارند.</p></td>
+    </tr>
+    <tr>
+      <td rowspan="2"><p>اصل 4</p><p>Interface Segregation Principle</p></td>
+      <td><p><strong>موارد تحقق</strong></p></td>
+      <td>
+<p>MessageSerive از متودهای مجزا برای سرویس‌های مختلف استفاده کرده است.</p>
+    </tr>
+    <tr>
+      <td><p><strong>موارد نقض</strong></p></td>
+      <td><p>MessageService به تحمیل متودهای اضافی به فرزند‌های خود پرداخته است. (مثلا سرویس EmailMessageService باید متدهای پیامکی را پیاده‌سازی کند.)</p></td>
+    </tr>
+    <tr>
+      <td rowspan="2"><p>اصل 5</p><p>Dependency Inversion Principle</p></td>
+      <td><p><strong>موارد تحقق</strong></p></td>
+      <td><p>وابستگی سطح بالای Main به MessageService بجای وابستگی به کلاس‌های خاص‌منظوره‌تر در راستای این مورد صورت گرفته است. </p></td>
+    </tr>
+    <tr>
+      <td><p><strong>موارد نقض</strong></p></td>
+      <td><p>Main مستقیما به کلاس‌ها وابسته است. این درحالی‌ست که این وابستگی باید به ابسترکت‌ها باشد. </p></td>
+    </tr>
+  </tbody>
+</table>
