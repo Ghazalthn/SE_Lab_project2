@@ -337,7 +337,7 @@
     <tr>
       <td rowspan="2" width="240"><p>اصل 1</p><p>Single Responsibility</p></td>
       <td width="95"><p><strong>موارد تحقق</strong></p></td>
-      <td width="454"><p>- هر کلاس به ارسال یک نوع از پیام‌ها می‌پردازد. من جمله این انواع می‌توان به ایمیل، پیامک و پیام تلگرامی اشاره کرد.
+      <td width="454"><p>هر کلاس به ارسال یک نوع از پیام‌ها می‌پردازد. من جمله این انواع می‌توان به ایمیل، پیامک و پیام تلگرامی اشاره کرد.
     <tr>
       <td><p><strong>موارد نقض</strong></p></td>
       <td><p>کلاس main همه کار می‌کند و وظایف زیادی دارد.
@@ -362,17 +362,17 @@
     </tr>
     <tr>
       <td><p><strong>موارد نقض</strong></p></td>
-      <td><p> MessageService، رفتارهای اضافی به فرزندان خود تحمیل کرده در حالیکه آن‌ها به این رفتار‌ها نیازی ندارند.</p></td>
+      <td><p>سرویس MessageService، رفتارهای اضافی به فرزندان خود تحمیل کرده در حالیکه آن‌ها به این رفتار‌ها نیازی ندارند.</p></td>
     </tr>
     <tr>
       <td rowspan="2"><p>اصل 4</p><p>Interface Segregation Principle</p></td>
       <td><p><strong>موارد تحقق</strong></p></td>
       <td>
-<p>MessageSerive از متودهای مجزا برای سرویس‌های مختلف استفاده کرده است.</p>
+<p>سرویس MessageSerivce از متودهای مجزا برای سرویس‌های مختلف استفاده کرده است.</p>
     </tr>
     <tr>
       <td><p><strong>موارد نقض</strong></p></td>
-      <td><p>MessageService به تحمیل متودهای اضافی به فرزند‌های خود پرداخته است. (مثلا سرویس EmailMessageService باید متدهای پیامکی را پیاده‌سازی کند.)</p></td>
+      <td><p>سرویس MessageService به تحمیل متودهای اضافی به فرزند‌های خود پرداخته است. (مثلا سرویس EmailMessageService باید متدهای پیامکی را پیاده‌سازی کند.)</p></td>
     </tr>
     <tr>
       <td rowspan="2"><p>اصل 5</p><p>Dependency Inversion Principle</p></td>
@@ -381,7 +381,77 @@
     </tr>
     <tr>
       <td><p><strong>موارد نقض</strong></p></td>
-      <td><p>Main مستقیما به کلاس‌ها وابسته است. این درحالی‌ست که این وابستگی باید به ابسترکت‌ها باشد. </p></td>
+      <td><p>کلاس Main مستقیما به کلاس‌ها وابسته است. این درحالی‌ست که این وابستگی باید به ابسترکت‌ها باشد. </p></td>
     </tr>
   </tbody>
+</table>
+
+
+## مرحله چهارم: موارد نقص و ارائه‌ی راه‌کار پیشنهادی 
+
+<table dir='rtl'>
+<tbody>
+<tr>
+<td width="168">
+<p><strong>اصل مربوطه (از اصول </strong><strong>SOLID</strong><strong>)</strong></p>
+</td>
+<td width="246">
+<p><strong>علت نقض</strong></p>
+</td>
+<td width="284">
+<p><strong>راه حل پیشنهادی</strong></p>
+</td>
+</tr>
+<tr>
+<td width="168">
+<p>Single Responsibility Principle</p>
+</td>
+<td width="246">
+<p>
+سرویس MessageService    کارهای زیادی می‌کند (من جمله ولیدیت و ارسال)
+همچنین کلاس main هم حجم‌کاری بسیاری دارد. (من جمله ساختن آبجکت‌ها، گرفتن ورودی و...)
+</p>
+</td>
+<td width="284">
+<p>سولوشن ۱۱۱۱۱</p>
+</td>
+</tr>
+<tr>
+<td width="168">
+<p>Open-Close Principle</p>
+</td>
+<td width="246">
+<p>برای افزودن نوعی جدید از پیام لازم است:
+- ابتدا MessageService  را مودیفای کنیم
+- سپس سوییچ کیس‌های موجود در Main را به‌روز‌رسانی کنیم.</p>
+</td>
+<td width="284">
+<p>سولوشن ۲۲۲۲۲</p>
+</td>
+</tr>
+<tr>
+<td width="168">
+<p>Liskov Substitution Principle & Interface Segregation Principle</p>
+</td>
+<td width="246">
+<p>سرویس MessageService  کلاس‌ها را به پیاده‌سازی متد‌هایی می‌کند که به آنان نیازی ندارند.
+- فرضا EmailMessageService  باید متد sendSmsMessage() را پیاده‌سازی کند که بدیهتا مورد نیازش نمی‌باشد.</p>
+</td>
+<td width="284">
+<p>سولوشن ۳۳۳۳۳ (تیکه تیکه‌ش باید بکنیم)</p>
+</td>
+</tr>
+<tr>
+<td width="168">
+<p>Dependency Inversion Principle</p>
+</td>
+<td width="246">
+<p>متد main به به پیاده‌سازی concrete سرویس MessageService وابسته است.
+- این مورد باعث وابستگی بیش از حد و پیچیدگی در توسعه و تست می‌شود.</p>
+</td>
+<td width="284">
+<p>سولوشن ۴۴۴۴ (استفاده از dependancy injection و اینها)</p>
+</td>
+</tr>
+</tbody>
 </table>
